@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button class="get">Get Post</button>
+    <button class="create">CreatePost</button>
+    <script>
+      document.querySelector(".get").addEventListener("click", async () => {
+        const res = await fetch("http://localhost:5000/posts");
+        const data = await res.json();
+        console.log(data);
+      });
+      document.querySelector(".create").addEventListener("click", async () => {
+        const res = await fetch("http://localhost:5000/posts", {
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify({
+            id: 2,
+            title: "post from client",
+            description: "hello there",
+          }),
+        });
+        const data = await res.json();
+        console.log(data);
+      });
+    </script>
+  </body>
+</html>

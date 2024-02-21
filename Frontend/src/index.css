@@ -1,0 +1,98 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.fade-enter {
+  opacity: 0;
+}
+.fade-exit {
+  opacity: 0;
+}
+.fade-enter-active {
+  opacity: 1;
+}
+.fade-exit-active {
+  opacity: 0;
+}
+.fade-enter-active,
+.fade-exit-active {
+  transition: opacity 500ms;
+}
+
+.loader {
+  border: 2px solid #fff;
+  width: 42px;
+  height: 42px;
+  background: #0d9488;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+  box-sizing: border-box;
+  animation: rotation 2s linear infinite;
+}
+.loader::after {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  border: 24px solid;
+  border-color: transparent #fff;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #99f6e4;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #0d9488;
+  border-radius: 10px;
+}
+
+@media (max-width: 768px) {
+  .Toastify__toast {
+    width: 50%;
+    font-size: 12px;
+  }
+}
+
+.textShadow {
+  color: darkgrey;
+  text-shadow: 1px 1px 0 #0d9488, 1px 2px 0 #0d9488, 1px 3px 0 #0d9488,
+    1px 4px 0 #0d9488, 1px 6px 0 grey, 1px 7px 0 grey, 1px 8px 0 grey,
+    5px 13px 15px #0d9488;
+}
+
+.threeD {
+  color: darkgrey;
+  white-space: nowrap;
+  font-family: sans-serif;
+  letter-spacing: 0.1em;
+  transition: 0.3s;
+  text-shadow: 1px 1px 0 #0d9488, 1px 2px 0 #0d9488, 1px 3px 0 #0d9488,
+    1px 4px 0 #0d9488, 1px 5px 0 #0d9488, 1px 6px 0 grey, 1px 7px 0 grey,
+    1px 8px 0 grey, 5px 13px 15px #0d9488;
+}
+
+.threeD:hover {
+  transition: 0.3s;
+  transform: scale(1.1);
+  text-shadow: 1px -1px 0 #0d9488, 1px -2px 0 #0d9488, 1px -3px 0 #0d9488,
+    1px -4px 0 #0d9488, 1px -5px 0 #0d9488, 1px -6px 0 grey, 1px -7px 0 grey,
+    1px -8px 0 grey, 5px -13px 15px #0d9488, 5px -13px 25px #808080;
+}
